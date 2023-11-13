@@ -133,9 +133,17 @@ Response Body (Failed, 401) :
 }
 ```
 
+Response Body (Failed, 400) :
+
+```json
+{
+  "errors" : "Pokemon already in deck"
+}
+```
+
 ## Release Pokemon
 
-Endpoint : PUT /api/pokemon/release
+Endpoint : DELETE /api/pokemon/release
 
 Request Header :
 

@@ -23,11 +23,11 @@ public class PokemonUser {
     private String userId;
 
     @Column(name = "pokemon_id")
-    private String pokemonId;
+    private Integer pokemonId;
 
     @Column(name = "pokemon_nickname")
     private String pokemonNickname;
     
-    @Column(name = "curent_fibo")
+    @Column(name = "current_fibo")
     private int curentFibo;
 }

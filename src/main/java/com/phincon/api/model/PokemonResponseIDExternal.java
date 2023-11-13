@@ -1,18 +1,16 @@
-package com.phincon.api.entity;
-
+package com.phincon.api.model;
 import java.util.List;
 
-import jakarta.annotation.Nullable;
+import com.phincon.api.entity.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Pokemon {
+public class PokemonResponseIDExternal {
     private String name;
-    private String url;
-    @Nullable
     private List<Move> moves;
-    @Nullable
     private List<TypeSlot> types;
+    private int weight;
 }
