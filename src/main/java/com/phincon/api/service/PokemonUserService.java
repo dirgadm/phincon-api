@@ -11,6 +11,7 @@ import com.phincon.api.entity.PokemonUser;
 import com.phincon.api.entity.User;
 import com.phincon.api.model.CatchPokemonRequest;
 import com.phincon.api.model.ReleasePokemon;
+import com.phincon.api.pkg.CustomValidation;
 import com.phincon.api.repository.PokemonUserRepository;
 
 import jakarta.transaction.Transactional;
@@ -38,7 +39,7 @@ public class PokemonUserService {
          *  1: Success
          *  2: Failed
          */
-        int number = generateRandomNumber(1, 2);
+        int number = CustomValidation.GenerateRandomNumber(1, 2);
         if (number == 2) {
             return "Failed to catch Pokemon, it already gone!!!";
         }
@@ -65,8 +66,8 @@ public class PokemonUserService {
             return "Pokemon is not belong to this user ";
         }
 
-        int number = generateRandomNumber(1, 100);
-        if (!isPrime(number)) {
+        int number = CustomValidation.GenerateRandomNumber(1, 100);
+        if (!CustomValidation.IsPrime(number)) {
             return "Not Prime number: "+number+" failed to release pokemon";
         }
 
@@ -74,28 +75,5 @@ public class PokemonUserService {
 
         return "OK";
         
-    }
-
-    public static int generateRandomNumber(int min, int max) {
-        Random rand = new Random();
-        return rand.nextInt((max - min) + 1) + min;
-    }
-
-    public static boolean isPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        if (number <= 3) {
-            return true;
-        }
-        if (number % 2 == 0 || number % 3 == 0) {
-            return false;
-        }
-        for (int i = 5; i * i <= number; i += 6) {
-            if (number % i == 0 || number % (i + 2) == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }
