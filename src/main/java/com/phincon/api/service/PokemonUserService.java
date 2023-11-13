@@ -1,12 +1,8 @@
 package com.phincon.api.service;
 
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
 import com.phincon.api.entity.PokemonUser;
 import com.phincon.api.entity.User;
 import com.phincon.api.model.CatchPokemonRequest;
