@@ -23,6 +23,14 @@ public class PokemonResponse {
 
     @Nullable
     @JsonInclude(Include.NON_NULL)
+    private String nickname;
+
+    @Nullable
+    @JsonInclude(Include.NON_NULL)
+    private Integer pokemon_id;
+
+    @Nullable
+    @JsonInclude(Include.NON_NULL)
     private List<Move> moves;
 
     @Nullable

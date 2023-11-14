@@ -15,11 +15,19 @@ Request Header :
 Response Body (Success) :
 
 ```json
-{
-  "data" : {
-    "name" : "Bulbasaur",
-    "image":""
-  }
+{"data": 
+    [
+        {
+            "name": "bulbasaur",
+            "image": "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/006-Gmax.png",
+            "id": 1
+        },
+        {
+            "name": "ivysaur",
+            "image": "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/006-Gmax.png",
+            "id": 2
+        }
+    ]
 }
 ```
 
@@ -57,7 +65,8 @@ Response Body (Success) :
       {
         "name":"normal"
       }
-    ]
+    ],
+    "id":1
   }
 }
 ```
@@ -82,14 +91,15 @@ Response Body (Success) :
 
 ```json
 {
-  "data" : {
-    "pokemon":{
-      "name" : "Bulbasaur",
-      "image":""
-    },
-    "user_id":"dirga",
-    "pokemon_nickname":"dirga_bulbas"
-  }
+    "data": [
+        {
+            "name": "butterfree",
+            "image": "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/807.png",
+            "nickname": "Mighty flash-0",
+            "pokemon_id": 12,
+            "id": 2
+        }
+    ]
 }
 ```
 
@@ -112,8 +122,8 @@ Request Header :
 Request Body :
 ```json
 {
-  "user_id":"dirga",
-  "pokemon_id":1
+  "pokemon_id":1,
+  "nickname":"Mighty Pikachu"
 }
 ```
 
@@ -152,7 +162,6 @@ Request Header :
 Request Body :
 ```json
 {
-  "user_id":"dirga",
   "pokemon_id":1
 }
 ```
@@ -184,9 +193,7 @@ Request Header :
 Request Body :
 ```json
 {
-  "user_id":"dirga",
   "pokemon_id":1,
-  "nickname":"BulbasDirDir"
 }
 ```
 

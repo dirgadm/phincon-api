@@ -61,7 +61,6 @@ public class PokemonUserController {
         produces = MediaType.APPLICATION_JSON_VALUE
     )
     public WebResponse<PokemonResponse>getDetail(User user,@PathVariable("id") int id){
-        System.out.println("input ID: "+ id);
         String url = "https://pokeapi.co/api/v2/pokemon/"+id;
         String image_hardcoded = "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/807.png";
 
@@ -102,29 +101,27 @@ public class PokemonUserController {
 
         return WebResponse.<String>builder().data(response).build();
     }
+
+    @PutMapping(
+        path = "/api/pokemon/rename",
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<String>renamePokemon(User user, @RequestBody ReleasePokemon request){
+        
+        String response = pokemonUserService.renamePokemon(request, user);
+
+        return WebResponse.<String>builder().data(response).build();
+    }
+
+    @GetMapping(
+        path = "/api/user/current/pokemon/",
+        produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public WebResponse<List<PokemonResponse>>getListPokemon(User user){
+
+        List<PokemonResponse> pokemonResponse = pokemonUserService.listPokemon(user);
+
+        return WebResponse.<List<PokemonResponse>>builder().data(pokemonResponse).build();
+    }
 }
-
-//  public WebResponse<List<Pokemon>> get() {
-//         String url = "https://pokeapi.co/api/v2/pokemon";
-
-//         RestTemplate restTemplate = new RestTemplate();
-
-//         ResponseEntity<PokemonResponse> response = restTemplate.exchange(
-//             url,
-//             HttpMethod.GET,
-//             null,
-//             new ParameterizedTypeReference<PokemonResponse>() {}
-//         );
-
-//         List<Pokemon> pokemons = response.getBody().getPokemons();
-//         return WebResponse.<List<Pokemon>>builder().data(pokemons).build();
-//     }
-
-// public WebResponse<Object> get(){
-//         String url = "https://pokeapi.co/api/v2/pokemon";
-
-//         RestTemplate restTemplate = new RestTemplate();
-
-//         Object pokemons = restTemplate.getForObject(url, Object.class);
-//         return WebResponse.<Object>builder().data(pokemons).build();
-//     }

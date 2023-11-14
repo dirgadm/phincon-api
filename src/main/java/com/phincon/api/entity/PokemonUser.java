@@ -30,4 +30,7 @@ public class PokemonUser {
     
     @Column(name = "current_fibo")
     private int curentFibo;
+
+    @Column(name = "pokemon_name")
+    private String pokemonName;
 }
