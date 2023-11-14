@@ -28,7 +28,7 @@
 
 ## Endpoint Testing 
     1. Untuk kontrak API(Backend - FrontEnd) dapat di lihat di dalam file *.md di dalam folder ./doc/
-    2. Tersedia di `./doc/Phincon.postman_collection.json` dan siap untuk di import ke Postman
+    2. Untuk testing di postman tersedia di `./doc/Phincon.postman_collection.json` dan siap untuk di import ke Postman
     3. base_url: http://localhost:8080
     
 
