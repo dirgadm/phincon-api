@@ -34,7 +34,7 @@
 
 ## List Endpoint
 1. [METHOD:POST] Register: Melakukan register user dan disimpan di dalam database
-2. [METHOD:POST] Login: Melakukan login user dan mengembalikan Token(X-API-TOKEN), dan disimpan dalam database, yang akan digunakan sebagai anthentication untuk semua endpoint yang akan di jelaskan setelah point 2 ini
+2. [METHOD:POST] Login: Melakukan login user dan mengembalikan Token(X-API-TOKEN), dan disimpan dalam database, yang akan digunakan sebagai authentication untuk semua endpoint yang akan di jelaskan setelah point 2 ini
 
 > !!!Warning!!! Token sebagai header dengan key:X-API-TOKEN, MANDATORY untuk semua endpoint yang di jabarkan dari point 3 - seterusnya
 3. [METHOD:GET] Get User: mengembalikan informasi user yang sedang login 
